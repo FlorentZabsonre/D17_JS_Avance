@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+<!--
+<h3>Bienvenue {{currentUser.loging}}</h3>
+-->
+<h3>Bienvenue {{ currentUser.loging }}</h3>
+
+<nav>
+    <a routerLink="/">Courses</a><br />
+    <a routerLink="/lesPoneys">liste de Poney</a><br />
+    <a routerLink="/addPony">Ajouter un pony</a><br />
+    <a routerLink='/addRace'>Ajouter une course(race)</a><br />
+    
+</nav>
+<hr>
+<router-outlet></router-outlet>
+<!--
+    <a routerLink='/addPonyRF'>Ajouter Un poney</a><br />
+    <a routerLink='/addRaceRF'>Ajouter Une course</a>
+
+
+<hr>
+
+<hr>
+<app-pony-form></app-pony-form>
+<hr>
+
+<h1>liste des course</h1>
+<app-races></app-races>
+-->

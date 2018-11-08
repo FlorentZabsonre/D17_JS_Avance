@@ -1,0 +1,22 @@
+<h1>Entrer une new course</h1>
+<!--SI ON USE UN SELECT CEST QUON A FAUX-->
+<!--tout les poney ajouté doivent appartaitre et on doit  les choisir ne pas use de checkbox-->
+<form (ngSubmit)="onSubmit()">
+ 
+  localisation<input type="text" id="location" name="location" required [(ngModel)]="model.location"/>
+  <br/>
+  date<ngb-datepicker #dp [(ngModel)]="dateModel" [ngModelOptions]="{standalone:true}"></ngb-datepicker>
+    <p-pickList [source]="ponies" [target]="model.ponies" [responsive]="true" dragdrop="true" dragdropScope="ponies">
+    
+        <ng-template let-pony pTemplate="item">
+            <div class="ui-helper-clearfix">
+                {{pony.name}}
+            </div>
+        </ng-template>
+    </p-pickList>
+
+  <br/>
+  <label class="btn-primary" ngbButtonLabel>
+    <button type="submit">Enregistrer</button>
+</label>
+</form>

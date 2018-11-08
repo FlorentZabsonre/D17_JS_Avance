@@ -1,0 +1,25 @@
+<h1>2eme Formulaire d'ajout de course (race) </h1>
+<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+  localisation<input type="text" id="location" name="location" formControlName="location" />
+  <br />
+  Date<ngb-datepicker #dp [(ngModel)]="dateSelectionne" [ngModelOptions]="{standalone:true}"></ngb-datepicker>
+  <br />
+  <p-pickList [source]="toutLesPoney" [target]="poneySelectionne" [responsive]="true" dragdrop="true" dragdropScope="ponies">
+
+    <ng-template let-pony pTemplate="ponies">
+      <div class="ui-helper-clearfix">
+        {{pony.name}}
+      </div>
+    </ng-template>
+  </p-pickList>
+
+  <br />
+  <button type="submit" [disabled]="raceForm.valid">Enregistrer</button>
+
+</form>
+<p>
+  Valeur: {{ raceForm.value | json}}
+</p>
+<p>
+  Statu: {{ raceForm.status }}
+</p>

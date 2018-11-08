@@ -1,0 +1,11 @@
+<p>
+  {{race.id}} - {{race.location}} - 
+  <br/> {{race.date | date:"dd/MM/yyyy"}} 
+</p>
+
+<ul *ngIf= "race.ponies.length >0">
+    <li *ngFor="let r of race.ponies">
+
+      <app-pony-details [pony]="r"></app-pony-details>
+    </li>
+</ul>

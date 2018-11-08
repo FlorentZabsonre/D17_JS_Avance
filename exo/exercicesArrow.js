@@ -1,0 +1,48 @@
+var listEntier = [1, 12, 14, 2, 3, 40, 4, 9, 7, 11];
+var list = [1, 2, 3, 4];
+//let sum=(x:number,y:number)=>x+y;
+var sum = listEntier.reduce(function (x, y) { return x + y; });
+console.log('somme des elements du tableau = ' + sum);
+console.log('-------------------------------------------------------------------------');
+var moyenne = sum / listEntier.length;
+console.log('moyenne des elements du tableau = ' + moyenne);
+console.log('-------------------------------------------------------------------------');
+var nbSupAsix = listEntier.filter(function (x) { return x > 6; });
+console.log('tab des elements sup à 6' + nbSupAsix);
+console.log('-------------------------------------------------------------------------');
+var nbElementTab = listEntier.reduce(function (compteur) { return compteur += 1; });
+console.log('nombre d\'element dans le tableau : ' + nbElementTab);
+console.log('-------------------------------------------------------------------------');
+var Persone = /** @class */ (function () {
+    function Persone(nom, prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    return Persone;
+}());
+var p1 = new Persone('bond', 'james');
+var p2 = new Persone('larson', 'nicky');
+var p3 = new Persone('jacquin', 'quentin');
+var listPersonne = [];
+var orderByNom = function (e1, e2) { return (e1.nom < e2.nom) ? -1 : (e1.nom > e2.nom) ? 1 : 0; };
+var orderByPrenom = function (e1, e2) { return (e1.prenom < e2.prenom) ? -1 : (e1.prenom > e2.prenom) ? 1 : 0; };
+listPersonne.push(p1);
+listPersonne.push(p2);
+listPersonne.push(p3);
+//let orderNom= listPersonne.sort(orderByNom);
+console.log('---------------------------------Par nom---------------------------------');
+console.log(listPersonne.sort(orderByNom));
+console.log('-------------------------------------------------------------------------');
+console.log('---------------------------------Par prenom------------------------------');
+console.log(listPersonne.sort(orderByPrenom));
+console.log('-------------------------------------------------------------------------');
+console.log('--------------------------------affiche les noms------------------------');
+var affichNom = function (e) { return e.nom; };
+console.log(listPersonne.map(affichNom));
+console.log('-------------------------------------------------------------------------');
+console.log('----------affiche les noms maj et le prenom des personne trié en decroissant------------------------');
+var orderDecroissant = function (e1, e2) { return (e1.nom < e2.nom) ? 1 : (e1.nom > e2.nom) ? -1 : 0; };
+var nomMaj = function (e) { return (e.nom).toUpperCase(); };
+var nomMaj1 = listPersonne.toLocaleString;
+//console.log(listPersonne.sort(orderDecroissant));
+console.log(nomMaj1);
