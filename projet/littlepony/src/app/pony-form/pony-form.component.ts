@@ -20,7 +20,7 @@ export class PonyFormComponent implements OnInit {
       this.add = true;
     } else {
       this.add = false;
-      const id = parseInt(this.route.snapshot.paramMap.get('id'), 0);
+      const id = parseInt(this.route.snapshot.paramMap.get('id'), 0)
       this.service.getPony(id).subscribe(p => this.model = p);
     }
   }

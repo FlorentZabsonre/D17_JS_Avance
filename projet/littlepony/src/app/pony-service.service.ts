@@ -35,15 +35,19 @@ export class PonyServiceService {
   }
 
   getPony(id: number): Observable<Pony> {
-    return this.http.get<Pony>(this.url +'/pony/'+id, this.httpOptions);
+    return this.http.get<Pony>(this.url + '/pony/' +id, this.httpOptions);
   }
-  deletePony(id:number):Observable<Pony>
-  {
-    return this.http.delete<Pony>(this.url+ '/deletePony/'+id,this.httpOptions);
+  
+  deletePony(id: number):void {
+    //return null;
+   this.http.delete(this.url+'/deletePony/'+id,this.httpOptions).subscribe( () => this.router.navigate( ['/']));
+    
+  
   }
-  updatePony(id:number,p:Pony)
-  {
-    this.http.put(this.url+'/update/'+id,p,this.httpOptions).subscribe(()=> this.router.navigate(['/lesPoneys']));
+  
+  
+  updatePony(id: number, p: Pony) {
+    this.http.put(this.url + '/update/' + id, p, this.httpOptions).subscribe(() => this.router.navigate(['/lesPoneys']));
   }
 
 }

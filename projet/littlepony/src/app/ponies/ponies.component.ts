@@ -23,4 +23,7 @@ ponies: Array<Pony> = [];
    
   }
 
+  delete(id: number){
+    this.service.deletePony(id);
+  }
 }

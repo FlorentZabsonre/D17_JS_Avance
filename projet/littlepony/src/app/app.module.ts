@@ -25,6 +25,7 @@ import { RaceReactiveFormComponent } from './race-reactive-form/race-reactive-fo
 import { DragDropModule } from 'primeng/dragdrop';
 import { HttpClientModule } from '@angular/common/http';
 import { PonyComponent } from './pony/pony.component';
+import { PonyTransformPipe } from './pony-transform.pipe';
 
 const routes: Routes =
   [
@@ -33,10 +34,11 @@ const routes: Routes =
     { path: 'Races', component: RacesComponent },
     { path: 'addPony', component: PonyFormComponent },
     { path: 'addRace', component: RaceFormComponent },
-   // { path: 'addPonyRF', component: PoneyReactiveFormComponent },
+    // { path: 'addPonyRF', component: PoneyReactiveFormComponent },
     //{ path: 'addRaceRF', component: RaceReactiveFormComponent },
     { path: 'pony/:id', component: PonyComponent },
-    { path: 'UpdatePony/:id', component: PonyFormComponent }
+    { path: 'updatePony/:id', component: PonyFormComponent },
+    { path: 'deletePony/:id', component: PoniesComponent }
   ];
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ const routes: Routes =
     RaceFormComponent,
     PoneyReactiveFormComponent,
     RaceReactiveFormComponent,
-    PonyComponent
+    PonyComponent,
+    PonyTransformPipe
   ],
   imports: [
     BrowserModule,
