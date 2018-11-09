@@ -7,5 +7,6 @@
     <li *ngFor="let r of race.ponies">
 
       <app-pony-details [pony]="r"></app-pony-details>
+      <button (click)="addVote(race)">+</button>
     </li>
 </ul>

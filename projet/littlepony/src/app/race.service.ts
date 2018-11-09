@@ -30,4 +30,17 @@ export class RaceService {
     //his.races.push(race);
     this.http.post(this.url +'/addRace',race,this.httpOptions).subscribe(()=> this.router.navigate(['/']) );
   }
+  /*
+  deletePoneyDuneRace(id: number)
+  {
+    for(let r of this.races)
+    {
+
+      for(let p in
+      {
+
+      }
+    }
+  }
+  */
 }
